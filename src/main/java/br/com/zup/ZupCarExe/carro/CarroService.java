@@ -29,4 +29,14 @@ public class CarroService {
         throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Não encontrei");
     }
 
+
+    public CarroDto atualizarCarro(String nomeDoCarro, CarroDto carroDTO){
+        CarroDto carro = buscarCarroPorNome(nomeDoCarro);
+        carro.setAno(carroDTO.getAno());
+        carro.setCor(carroDTO.getCor());
+        carro.setMotor(carroDTO.getMotor());
+
+        return carro;
+    }
+
 }

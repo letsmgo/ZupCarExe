@@ -29,4 +29,10 @@ public class CarroController {
         return carroService.buscarCarroPorNome(nomeDoCarro);
     }
 
+    @PutMapping("/{nomeDoCarro}")
+    public CarroDto atualizarCarro(@PathVariable String nomeDoCarro, @RequestBody CarroDto carroDTO ) {
+        return carroService.atualizarCarro(nomeDoCarro, carroDTO);
+    }
+
+
 }
