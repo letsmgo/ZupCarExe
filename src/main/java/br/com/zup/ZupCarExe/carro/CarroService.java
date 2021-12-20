@@ -39,4 +39,19 @@ public class CarroService {
         return carro;
     }
 
+    public void deletarCarro(String nomeDoCarro){
+        CarroDto carroReferencia = null;
+        for (CarroDto objeto: concessionaria){
+            if (objeto.getModelo().equals(nomeDoCarro)){
+                carroReferencia = objeto;
+
+            }
+        }
+        if (carroReferencia == null){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }else {
+            concessionaria.remove(carroReferencia);
+        }
+
+    }
 }

@@ -34,5 +34,9 @@ public class CarroController {
         return carroService.atualizarCarro(nomeDoCarro, carroDTO);
     }
 
-
+    @DeleteMapping("{nomeCarro}")
+    @ResponseStatus(HttpStatus.MOVED_PERMANENTLY)
+    public void deletarCarro(@PathVariable String nomeCarro) {
+        carroService.deletarCarro(nomeCarro);
+    }
 }
