@@ -10,5 +10,8 @@ import java.util.List;
 public class CarroService {
     private List<CarroDto> concessionaria = new ArrayList<>();
 
+    public void salvarCarro (CarroDto carroDto){
+        concessionaria.add(carroDto);
+    }
 
 }
