@@ -14,4 +14,7 @@ public class CarroService {
         concessionaria.add(carroDto);
     }
 
+    public List<CarroDto> exibirCarros(){
+        return concessionaria;
+    }
 }
