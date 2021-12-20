@@ -19,4 +19,14 @@ public class CarroController {
         carroService.salvarCarro(carroDto);
     }
 
+    @GetMapping
+    public List<CarroDto> exibirCarros(){
+        return carroService.exibirCarros();
+    }
+
+    @GetMapping("/{nomeDoCarro}")
+    public CarroDto exibirCarro(@PathVariable String nomeDoCarro){
+        return carroService.buscarCarroPorNome(nomeDoCarro);
+    }
+
 }
